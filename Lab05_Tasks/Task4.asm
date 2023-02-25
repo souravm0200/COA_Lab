@@ -1,0 +1,31 @@
+.MODEL SMALL
+.STACK 100h
+.DATA
+.CODE
+
+MAIN PROC 
+     
+    MOV AX, 4
+    MOV BX, 7
+    MOV CX, 10
+
+    CMP AX, BX   
+    JG END_IF 
+
+    CMP CX, BX      
+    JG PUT_AX_TO_ZERO
+
+    MOV BX, 0 
+    JMP END_IF
+
+PUT_AX_TO_ZERO:
+
+    MOV AX, 0
+
+END_IF:
+
+    MOV AH, 4CH
+    INT 21h
+
+MAIN ENDP
+END MAIN
