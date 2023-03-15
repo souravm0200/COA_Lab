@@ -9,12 +9,11 @@ org 100h
 
 main proc
      
-
-   
       mov bl,3
-      add bl,5 ;sum
+      mov cl,5
+      add bl,cl ;sum
      
-      sub bl,48d ;convert to ascii number
+      add bl,48d ;convert to ascii number
      
       mov dl,bl
       mov ah,2
@@ -26,4 +25,3 @@ main proc
       main endp 
  
 end main
-ret
